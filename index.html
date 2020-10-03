@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div id="center">
+        <button type="button" class="btn btn-info">Generate Quote</button>
+        <br>
+        <p id="displayQuotes"></p>
+        <br>
+        <p id="displayAuthor"></p>
+    </div>
+    <script>
+        const quotesArray = [{quote: "Happiness quite unshared can scarcely be called happiness, it has no taste.", author:"Charlotte Brontë"}
+                        ,{quote:"I don't see how you can respect yourself if you must look in the hearts and minds of others for your happiness",author:"Hunter S Thompson"}
+                        ,{quote:"Some cause happiness wherever they go; others whenever they go.",author:"Oscar Wilde "}
+                        ,{quote:"And I urge you to please notice when you are happy, and exclaim or murmur or think at some point, 'If this isn't nice, I don't know what is.",author:"Kurt Vonnegut"}
+                        ,{quote:"If only we’d stop trying to be happy we’d have a pretty good time.",author:"Edith Wharton"}
+                        ,{quote:"Sanity and happiness are an impossible combination.",author:"Mark Twain"}
+                        ,{quote:"There is no duty we so much underrate as the duty of being happy. By being happy we sow anonymous benefits upon the world.",author:" Robert Louis Stevenson"}
+                        ,{quote:"One half of the world cannot understand the pleasures of the other.",author:"Jane Austen"}
+                        ,{quote:"Man only likes to count his troubles; he doesn't calculate his happiness.",author:"Fyodor Dostoevsky"}
+                        ,{quote:"Happiness is an allegory, unhappiness a story.",author:"Leo Tolstoy"} 
+        ]
+
+        const button = document.querySelector("button")
+        const Display = document.querySelector("#displayQuotes")
+        const authorName = document.querySelector("#displayAuthor")
+
+        button.addEventListener("click",generateQuote);
+
+        function generateQuote(){
+            const quoteIndex = Math.floor(Math.random()*quotesArray.length)
+            const randomQuote =  quotesArray[quoteIndex].quote;
+            const randomAuthor = "-" + quotesArray[quoteIndex].author;
+            Display.textContent = randomQuote;
+            authorName.textContent = randomAuthor;
+            
+        };
+
+       
+
+    </script>
+</body>
+</html>
